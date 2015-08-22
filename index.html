@@ -1,67 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content=" FILL ME IN ">
-    <meta name="author" content=" FILL ME IN ">
-    <title>Cameron Pittman: Portfolio</title>
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/style-mobile.css" rel="stylesheet" media="orientation:portrait and (max-width: 480px)">
-    <link href="css/print.css" rel="stylesheet" media="print">
-    <script async src="http://www.google-analytics.com/analytics.js"></script>
-    <script async src="js/perfmatters.js"></script>
-  </head>
 
-  <body>
-    <header>
-      <a href="/"><img src="img/profilepic.jpg"></a>
-      <p>Cameron Pittman<br><span>Course Developer</span></p>
-    </header>
+<head>
+  <title>Les Ansley</title>
 
-    <div class="container">
-      <div class="hero">
-        <strong>I love web development!</strong> This is a template for a simple portfolio. I decided to use it to showcase a few Udacity courses I've taken and some teaching work, but you can use it to showcase any kind of project that you want the world to see :) <br> Contact me: me@email.com
+  <!--This stylesheet makes browsers render all elements more consistently and in line with modern standards. It precisely targets only the styles that need normalizing-->
+  <link rel="stylesheet" href="http://normalize-css.googlecode.com/svn/trunk/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="shortcut icon" href="images/favicon-32x32.ico">
+
+  <!--Load script files-->
+  <script src="js/jQuery.js"></script>
+  <script src="js/helper.js"></script>
+  <script src="js/map.js"></script>
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+  <div id="main">
+
+    <div id="header" class="center-content clearfix">
+      <ul id="topContacts" class="flex-box mobile-invisible"></ul>
+    </div>
+    <div id="introduction" class="center-content"></div>
+    <div style="clear: both;"></div>
+
+    <div class="sectionDivider mobile-visible""><hr></div>
+
+    <div id="skills" class="mobile-visible">
+      <div class="row">
+        <h2 id="skills-header" class="section-header" onMouseOver="return changeImage('skillsButton', skillsStatus)" onMouseOut= "return changeImageBack('skillsButton', skillsStatus)" onMouseDown="return handleMDown('skillsButton', 'skills', 'skills-section-container')">Skills</h2>
+        <img id="skillsButton" class="img-arrow" src="images/arrow-right.jpg" alt="javascript button">
       </div>
-
-      <div class="content">
-        <ul>
-          <li>
-            <img src="https://lh4.ggpht.com/kJEnfqhPvtm4m3EneSZ4fWYGS8lW4YNhEjk6zPkyrQaBUHc-2Y_ElDic99NHI0h-UBLXVbRCjFybFvrWxdk=s100">
-            <a href="project-2048.html">Build Your Own 2048!</a>
-            <p>I made my own version of 2048. How cool is that!?</p>
-          </li>
-
-          <li>
-            <img src="https://lh6.ggpht.com/f_0W8h__3G99CWTjnMjD8BUKm7yp2-wJyApLtTwFoFtlal2ULf_JgHIsOQq2NiYfKOdMlXlMHDKNo5XVZLs=s100">
-            <a href="project-webperf.html">Website Performance Optimization</a>
-            <p>Hey... this class looks familiar.</p>
-          </li>
-
-          <li>
-            <img src="https://lh5.ggpht.com/IKdCmTWn8a2nMhlwMYzryvzRN5CUZAOBr4tDrEAbszV7TIFe9pRAInA4kkYcgTXwrifJsBEsq1agTueuu-g=s100">
-            <a href="project-mobile.html">Mobile Web Development</a>
-            <p>Making mobile apps isn't so hard after all.</p>
-          </li>
-
-          <li>
-            <img style="width: 100px;" src="views/images/pizzeria.jpg">
-            <a href="views/pizza.html">Cam's Pizzeria</a>
-            <p>Who wants a performant pizza?</p>
-          </li>
-        </ul>
     </div>
 
-    <footer>
-      <p>&copy; Web Performance 2014 <span id="crp-stats"></span></p>
-    </footer>
-    <script async>
-      (function(w,g){w['GoogleAnalyticsObject']=g;
-      w[g]=w[g]||function(){(w[g].q=w[g].q||[]).push(arguments)};w[g].l=1*new Date();})(window,'ga');
+    <div class="sectionDivider"><hr></div>
 
-      // TODO: replace with your Google Analytics profile ID.
-      ga('create', 'UA-XXXX-Y');
-      ga('send', 'pageview');
-    </script>
-  </body>
+    <div id="workExperience">
+      <div class="row">
+        <h2 id="work-header" class="section-header" onMouseOver="return changeImage('workButton', workStatus)" onMouseOut= "return changeImageBack('workButton', workStatus)" onMouseDown="return handleMDown('workButton', 'work', 'work-container')">Work</h2>
+        <img id="workButton" class="img-arrow" src="images/arrow-right.jpg" alt="javascript button">
+      </div>
+    </div>
+
+    <div class="sectionDivider"><hr></div>
+
+    <div id="projects">
+      <div class="row">
+        <h2 id="project-header" class="section-header" onMouseOver="return changeImage('projectButton', projectStatus)" onMouseOut= "return changeImageBack('projectButton', projectStatus)" onMouseDown="return handleMDown('projectButton', 'project', 'project-container')">Projects</h2>
+        <img id="projectButton" class="img-arrow" src="images/arrow-right.jpg" alt="javascript button">
+      </div>
+    </div>
+
+    <div  class="sectionDivider"><hr></div>
+
+    <div id="education">
+      <div class="row">
+        <h2 id="education-header" class="section-header" onMouseOver="return changeImage('educationButton', educationStatus)" onMouseOut= "return changeImageBack('educationButton', educationStatus)" onMouseDown="return handleMDown('educationButton', 'education', 'school-container')">Education</h2>
+        <img id="educationButton" class="img-arrow" src="images/arrow-right.jpg" alt="javascript button">
+      </div>
+    </div>
+
+    <div class="sectionDivider"><hr></div>
+
+    <div id="publication">
+      <div class="row">
+        <h2 id="publication-header" class="section-header" onMouseOver="return changeImage('publicationButton', publicationStatus)" onMouseOut= "return changeImageBack('publicationButton', publicationStatus)" onMouseDown="return handleMDown('publicationButton', 'publication', 'publication-container')">Publications</h2>
+        <img id="publicationButton" class="img-arrow" src="images/arrow-right.jpg" alt="javascript button">
+      </div>
+    </div>
+
+    <div class="sectionDivider mobile-visible"><hr></div>
+
+    <div id="contact" class="mobile-visible">
+      <div class="row">
+        <h2 id="contact-header" class="section-header" onMouseOver="return changeImage('contactButton', contactStatus)" onMouseOut= "return changeImageBack('contactButton', contactStatus)" onMouseDown="return handleMDown('contactButton', 'contact', 'contact-container')">Contact Details</h2>
+        <img id="contactButton" class="img-arrow" src="images/arrow-right.jpg" alt="javascript button">
+      </div>
+    </div>
+
+    <div  class="mobile-invisible sectionDivider"><hr></div>
+
+    <div id="mapDiv" class="mobile-invisible">
+      <div class="row">
+        <h2 id="map-header" class="section-header" onMouseOver="return changeImage('mapButton', mapStatus)" onMouseOut= "return changeImageBack('mapButton', mapStatus)" onMouseDown="return handleMDown('mapButton', 'map', 'map')">Places</h2>
+        <img id="mapButton" class="img-arrow" src="images/arrow-right.jpg" alt="javascript button">
+      </div>
+    </div>
+
+    <div class="sectionDivider"><hr></div>
+
+    <footer id="letsConnect" class="dark-gray">
+      <h2 class="footer-text orange center-text">Let's Connect</h2>
+      <div class="cssValidation">
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/resumeBuilder.js"></script>
+  <script type="text/javascript">
+
+    //Call this when the form loads
+    onFormLoad();
+
+  </script>
+</body>
 </html>
